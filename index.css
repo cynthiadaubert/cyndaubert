@@ -1,0 +1,8 @@
+body {
+    background-color: #b6a2a2;  
+    background-image: url("./src/public/0888.png"); 
+    background-size:cover;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
