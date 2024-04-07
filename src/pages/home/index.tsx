@@ -6,7 +6,6 @@ import { Footer } from "components/footer";
 import { Button } from "components/button";
 import { ContactCard } from "components/contact";
 import photo from "../../public/circle.png"
-import square from "../../public/pep.png"
 
 
 
@@ -142,16 +141,7 @@ function Home() {
 
   `;
 
-  const Square = styled.img`
-  display: none;
-
-  @media (min-width: 769px) {
-    display: none;
-  }
-
-  `;
-
-  const Prueba = styled.div`
+  const Img = styled.div`
   display: none;
   height: 280px;
   width: 600px;
@@ -191,8 +181,7 @@ function Home() {
         <Image src={photo}/>
         <Title>Cynthia Daubert</Title>
         
-        <Square src={square}/>
-        <Prueba></Prueba>
+        <Img></Img>
         <TextBio>Hello! I'm a web developer specialized in frontend, with experience in technologies such as JavaScript, React and Node.js, among other popular frameworks. Currently, I'm continuing my studies in backend development and data management. I hope you enjoy checking my work!</TextBio>
         <Button>Download resume</Button>
       </Biocard>
