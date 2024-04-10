@@ -1,16 +1,47 @@
-import React, {useEffect} from "react";
-import {Link, useParams} from "react-router-dom"
+import React, {useState} from "react";
+import { useTranslation } from "react-i18next";
 import styled, {css} from "styled-components"
 import { Header } from "../../components/header"; 
 import { Footer } from "components/footer";
 import { Button } from "components/button";
 import { ContactCard } from "components/contact";
 import photo from "../../public/circle.png"
-
+import laptop from "../../public/notebook.png"
+import LanguageToggle from "components/language/index"
 
 
 function Home() {
 
+  // translation
+  const [tr, i18n] = useTranslation("global")
+
+  
+  
+
+/*   // toggle language
+  const LanguageToggle = ({ i18n }) => {
+    const [isSpanish, setIsSpanish] = useState(false); // State to track current language
+  
+    const toggleLanguage = () => {
+      const newLanguage = isSpanish ? 'en' : 'es'; // Toggle between 'en' and 'es'
+      setIsSpanish(!isSpanish); // Toggle the state
+      i18n.changeLanguage(newLanguage); // Change the language using i18n
+    };
+  
+    return (
+      <button onClick={toggleLanguage}>
+        {isSpanish ? 'English' : 'Español'}
+      </button>
+    );
+  };
+ */
+  // download resume
+  const handleClick = ()=>{
+    const url = 'https://drive.google.com/file/d/16VRU6zGc_wHf-vVBdx6qhpSMt6RQyO5E/view';
+    window.open(url, '_blank');
+  }
+
+  // styles
   const Cont = styled.div`
   display: none;
 
@@ -25,17 +56,24 @@ function Home() {
   `;
 
   const Subtitle = styled.p`
+  display: none;
+
+  
+  @media (min-width: 769px) {  
+  display: inherit;
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-size: 22px;
   margin: 0px 0px 50px 0px;
   padding: 0 auto;
+  }
+
   `;
 
   const Box = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin: 0 auto;
   `;
 
   const Container = styled.div`
@@ -126,7 +164,7 @@ function Home() {
   box-shadow: inset 0px 0px 2px 2px rgba(255, 255, 255, 0.4);
 
   @media (min-width: 769px) {
-    width: 700px;
+    width: 680px;
   }
 
   `;
@@ -141,14 +179,14 @@ function Home() {
 
   `;
 
-  const Img = styled.div`
+
+  const Laptop = styled.img`
   display: none;
-  height: 280px;
-  width: 600px;
-  background-color: white;
 
   @media (min-width: 769px) {
     display: inherit;
+    width: 420px;
+    margin-top: -150px; 
   }
 
   `;
@@ -157,11 +195,22 @@ function Home() {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-size: 18px;
-  margin: 35px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
   padding: 0;
   line-height: 30px;
   text-align: center;
   color: #585D6B;
+  `;
+
+  const LinksCard = styled.div`
+  display: flex;
+  justify-content: center;
+  width: max-content;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+
   `;
 
   
@@ -181,10 +230,12 @@ function Home() {
         <Image src={photo}/>
         <Title>Cynthia Daubert</Title>
         
-        <Img></Img>
-        <TextBio>Hello! I'm a web developer specialized in frontend, with experience in technologies such as JavaScript, React and Node.js, among other popular frameworks. Currently, I'm continuing my studies in backend development and data management. I hope you enjoy checking my work!</TextBio>
-        <Button>Download resume</Button>
+        <Laptop src={laptop}></Laptop>
+        <TextBio>{tr("bio.textbio")}</TextBio>
+        <Button onClick={handleClick}>{tr("bio.button")}</Button>
+        <LanguageToggle></LanguageToggle>
       </Biocard>
+      <LinksCard><ContactCard></ContactCard></LinksCard>
     </Container>
     </Box>
     <Footer></Footer>

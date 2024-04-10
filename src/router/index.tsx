@@ -8,6 +8,7 @@ import { Skills } from "pages/skills";
 
 
 
+
 export function AppRoutes() {
     return(
     <Routes>

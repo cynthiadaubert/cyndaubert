@@ -1,0 +1,32 @@
+{
+    "header":{
+        "home": "Home",
+        "projects": "Projects",
+        "skills": "Skills"
+    },
+    "bio": {
+        "textbio": "Hello! I'm a web developer specialized in frontend, with experience in technologies such as JavaScript, React and Node.js, among other popular frameworks. Currently, I'm continuing my studies in backend development and data management. I hope you enjoy checking my work!",
+        "button": "Download resume"
+    },
+    "contact":{
+        "connect": "Let's connect!",
+        "thx": "Thanks for your visit!"
+    },
+    "bento": {
+        "design": "Design",
+        "list-a": "Planning and scheduling",
+        "list-b": "Time management",
+        "list-c":  "Decision making",
+        "list-d": "Teamwork",
+        "list-e": "Productivity",
+        "list-f": "Flexibility",
+        "list-g": "Adaptability",
+        "list-h": "Collaboration",
+        "list-i": "Proactivity",
+        "list-j": "Diligence",
+        "list-k": "Integrity"
+    },
+    "project": {
+        "title": "Projects"
+    }
+}

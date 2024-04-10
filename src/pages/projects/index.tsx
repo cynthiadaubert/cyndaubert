@@ -3,10 +3,14 @@ import { Card } from "components/cards";
 import { Header } from "components/header";
 import { Footer } from "components/footer";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 
 
 function Projects() {
+
+    // translation
+    const [tr, i18n] = useTranslation("global")
 
   const Title = styled.h1`
   font-family: "Playfair Display", serif;
@@ -24,7 +28,7 @@ function Projects() {
   return (
     <div>
       <Header></Header>
-      <Title>Proyects</Title>
+      <Title>{tr("project.title")}</Title>
       <Card></Card>
       <Footer></Footer>
     </div>

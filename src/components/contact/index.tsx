@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {Link} from "react-router-dom"
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import email from "../../public/icons/email-outline.png"
 import linked from "../../public/icons/linkedin-outline.png"
 import git from "../../public/icons/github-outline.png"
@@ -9,6 +10,10 @@ import git from "../../public/icons/github-outline.png"
 
 function ContactCard() {
   
+  // translation
+  const [tr, i18n] = useTranslation("global")
+
+  //styles
   const Boxcard = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,6 +49,11 @@ function ContactCard() {
   text-align: left;
   text-decoration: none;
   color: #000000;
+
+  &:hover {
+    cursor: pointer;
+  }
+  
   `;
 
   const Add = styled.p`
@@ -81,7 +91,7 @@ function ContactCard() {
 
   return (
       <Boxcard>
-        <Title>Let's connect!</Title>
+        <Title>{tr("contact.connect")}</Title>
             <Socials>
               
                     <Add>cynthiaperezdaubert@gmail.com</Add>
@@ -95,12 +105,9 @@ function ContactCard() {
                     <img src={git}/> <Adress to="https://github.com/cynthiadaubert">Github</Adress>
                 </Pep>            
             </Socials>
-            <Thx>❤︎ Thanks for your visit!</Thx>
+            <Thx>❤︎ {tr("contact.thx")}</Thx>
       </Boxcard>
    )
 }
 
 export {ContactCard};
-
-/* 
-<img src={email}/>  */

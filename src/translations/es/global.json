@@ -1,0 +1,32 @@
+{
+    "header":{
+        "home": "Home",
+        "projects": "Proyectos",
+        "skills": "Skills"
+    },
+    "bio": {
+        "textbio":"Hola! Soy una desarrolladora web especializada en frontend, con experiencia en tecnologías como JavaScript, React y Node.js, entre otros frameworks populares. Actualmente, estoy continuando mis estudios sobre desarrollo backend y la gestión de datos. ¡Espero que disfrutes explorando mi trabajo!",
+        "button": "Descargar CV"
+    },
+    "contact":{
+        "connect": "Conectémonos!",
+        "thx": "Gracias por tu visita!"
+    },
+    "bento": {
+        "design": "Diseño",
+        "list-a": "Planificación",
+        "list-b": "Manejo del tiempo",
+        "list-c": "Toma de decisiones",
+        "list-d": "Trabajo en equipo",
+        "list-e": "Productividad",
+        "list-f": "Flexibilidad",
+        "list-g": "Adaptabilidad",
+        "list-h": "Colaboración",
+        "list-i": "Proactividad",
+        "list-j": "Diligencia",
+        "list-k": "Integridad"
+    },
+    "project": {
+        "title": "Proyectos"
+    }
+}

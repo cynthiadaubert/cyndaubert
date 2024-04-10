@@ -1,8 +1,18 @@
+*, html {
+
+    scroll-behavior: smooth !important;
+}
+
 body {
-    background-color: #0b0a0e;  
-    background-image: url("./src/public/0888.png"); 
+    background-color: #ffffff;  
+    background-image: url("https://64.media.tumblr.com/b9500ceb5cd267501b9d1cbaf9726e44/01e0c65d947c99a5-77/s1280x1920/0c53b7f426346cf9c9c452557ddb6d91634cd87a.pnj"); 
     background-size:cover;
     margin: 0 auto;
     box-sizing: border-box;
 }
 
+@media (min-width: 769px) {  
+    body {
+        background-image: url("https://64.media.tumblr.com/c1c6d299292fa3a41382da0d2f81c8e5/01e0c65d947c99a5-b7/s2048x3072/95b47896b2c9b9f4b5cfa82bfa32ddda03c942bf.pnj"); 
+    }
+}

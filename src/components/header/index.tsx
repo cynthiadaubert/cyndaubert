@@ -1,10 +1,15 @@
 import React,  {useEffect, useState} from "react";
 import {Link, useNavigate} from "react-router-dom"
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 
 
 function Header (){
+
+  const [tr, i18n] = useTranslation("global")
+
+  // STYLES
 
   const Container = styled.div`
   display: flex;
@@ -51,9 +56,9 @@ return (
     <div>
       <Container>
       <Box>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/projects">Projects</StyledLink>
-        <StyledLink to="/skills">Skills</StyledLink>
+        <StyledLink to="/">{tr("header.home")}</StyledLink>
+        <StyledLink to="/projects">{tr("header.projects")}</StyledLink>
+        <StyledLink to="/skills">{tr("header.skills")}</StyledLink>
       </Box>
       </Container>
     </div>

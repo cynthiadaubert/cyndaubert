@@ -1,5 +1,5 @@
 import React,  {useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom"
+import { useTranslation } from "react-i18next";
 import styled, {css} from "styled-components"
 import html from "../../public/icons/html-5.png"
 import cs from "../../public/icons/css.png"
@@ -20,17 +20,14 @@ import ps from "../../public/icons/photoshop.png"
 import vrc from "../../public/icons/verc.png"
 import clip from "../../public/icons/clips.png"
 
-// es css inyectado con template string
-// tambien podemos interpolar valores con la expresion ${}
-// NESTING DE SASS: &:hover el mismo H1 en el estado hover
-// tambien se pueden crear funciones como setTransitionTime
-// se pueden también pasar variables/valores como propiedades css por las props
-// también un renderizado condicional: si no recibo nada por props, || renderizo el color blanco
-// se pueden interpolar mas css con template string (props.isbutton)
-// se pueden crear animaciones (fade in)
-
-
 export function Bento(){
+
+  // translation
+  
+  // translation
+  const [tr, i18n] = useTranslation("global")
+
+  // styles
 
   const Cont = styled.div`
   margin-bottom: 50px;
@@ -126,7 +123,8 @@ export function Bento(){
   }
   `;
 
-  const Descr = styled.p`
+  const Descr = styled.ul`
+  list-style-type: none;
   font-family: "Playfair Display", serif;
   font-size: 20px;
   margin: 0;
@@ -156,7 +154,7 @@ export function Bento(){
             </Box>
           </div>
         <div>
-         <Title>Design</Title>
+         <Title>{tr("bento.design")}</Title>
         <Box>
             <img src={ps} />
             <img src={illu} />
@@ -169,17 +167,18 @@ export function Bento(){
         <div>
         <Title>Soft skills</Title>
         <Skill>
-          <Descr>✍️​ Planning and scheduling</Descr>
-          <Descr>✍️​ Time management</Descr>
-          <Descr>✍️​ Decision making</Descr>
-          <Descr>✍️​ Teamwork</Descr>
-          <Descr>✍️​ Productivity</Descr>
-          <Descr>✍️​ Flexibility</Descr>
-          <Descr>✍️​ Adaptability</Descr>
-          <Descr>✍️​ Collaboration</Descr>
-          <Descr>✍️​ Proactivity</Descr>
-          <Descr>✍️​ Diligence</Descr>
-          <Descr>✍️​ Integrity</Descr>
+        <Descr>
+         <li>✍️​ {tr("bento.list-a")}</li>
+         <li>✍️​ {tr("bento.list-b")}</li>
+         <li>✍️​ {tr("bento.list-c")}</li>
+         <li>✍️​ {tr("bento.list-d")}</li>
+         <li>✍️ {tr("bento.list-e")}</li>
+         <li>✍️​ {tr("bento.list-f")}</li>
+         <li>✍️​ {tr("bento.list-g")}</li>
+         <li>✍️​ {tr("bento.list-h")}</li>
+         <li>✍️​ {tr("bento.list-i")}</li>
+         <li>✍️​ {tr("bento.list-j")}</li>
+         <li>✍️​ {tr("bento.list-k")}</li></Descr>
         </Skill>
         </div>
         </Cont>

@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import React from "react";
 import styled, {css} from "styled-components"
 import arrow from "../../public/arrowup.png"
-import smoothscroll from "smoothscroll-polyfill";
 
-smoothscroll.polyfill();
+
 
 export default function ScrollToTop(){
 
@@ -14,6 +13,8 @@ export default function ScrollToTop(){
     position: fixed;
     right: 30px;
     bottom: 30px;
+    cursor: pointer;
+    z-index: 9999;
     `;
 
     const [ScrollButton, setScrollToTop] = useState(false)
@@ -30,7 +31,7 @@ export default function ScrollToTop(){
     }, [])
 
     const scrollUp = () => {
-        window.scroll({ top: 0, left: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, left: 0});
       };
     
     return <div>

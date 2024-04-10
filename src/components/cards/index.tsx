@@ -16,7 +16,6 @@ export function Card(){
   // CONTENT DELIVERY API
   useEffect(() => {
   const contentTypeId = 'portfolioDev';
-
   const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?content_type=${contentTypeId}&access_token=${accessToken}`;
 
 
@@ -45,6 +44,7 @@ fetch(url)
   display: flex;
   flex-direction: column;
   align-items: center;
+
   animation: fadeIn 2s ease forwards;
   margin: 80px 0px 80px 0px;
 
@@ -96,9 +96,9 @@ fetch(url)
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 900px;
+    height: 700px;
     margin: 30px;
-    width: 400px;
+    width: 380px;
   }
 
   `;
@@ -129,11 +129,11 @@ fetch(url)
  
 
   @media (min-width: 769px) {
-    width: 360px;
-    height: 158px;
+    width: 350px;
+    height: 350px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5; 
+    -webkit-line-clamp: 8; 
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: initial; 
@@ -148,8 +148,8 @@ border-radius: 15px;
 transition: opacity 0.5s ease;
 
 @media (min-width: 769px) {
-  height: 450px;
-  width: 350px;
+  height: 300px;
+  width: 200px;
   padding-top: 20px;
   border-radius: 15px;
 }
