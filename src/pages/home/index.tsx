@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import styled, {css} from "styled-components"
+import styled from "styled-components"
 import { Header } from "../../components/header"; 
 import { Footer } from "components/footer";
 import { Button } from "components/button";

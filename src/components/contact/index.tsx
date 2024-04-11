@@ -18,13 +18,19 @@ function ContactCard() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.08);
   box-shadow: 10px 10px 12px rgba(0,0,0,0.1);
   box-shadow: inset 0px 0px 2px 2px rgba(255, 255, 255, 0.4);
   border-radius: 20px; 
   padding-bottom: 25px;
   margin: 18px 0px 18px 0px;
+
+  
+  @media (min-width: 769px) {
+    width: 90%;
+  }
+
   `;
   
   const Title = styled.h1`
@@ -32,11 +38,17 @@ function ContactCard() {
   letter-spacing: 2px;
   font-weight: bold;
   text-align: center;
-  font-size: 58px;
+  font-size: 46px;
   height: fit-content;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 10px 0px 10px;
   color: #9F81FC;
   padding: 0;
+
+  @media (min-width: 769px) {
+    font-size: 58px;
+    margin: 20px 0px 0px 0px;
+  }
+
   `;
 
   const Adress = styled(Link)`
