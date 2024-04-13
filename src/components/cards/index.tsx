@@ -96,9 +96,9 @@ fetch(url)
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 700px;
+    height: 900px;
     margin: 30px;
-    width: 380px;
+    width: 450px;
   }
 
   `;
@@ -130,13 +130,7 @@ fetch(url)
 
   @media (min-width: 769px) {
     width: 350px;
-    height: 350px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: initial; 
+    height: max-content;
   }
 `;
 
@@ -148,8 +142,8 @@ border-radius: 15px;
 transition: opacity 0.5s ease;
 
 @media (min-width: 769px) {
-  height: 300px;
-  width: 200px;
+  height: 340px;
+  width: 300px;
   padding-top: 20px;
   border-radius: 15px;
 }
