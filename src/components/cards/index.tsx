@@ -96,7 +96,7 @@ fetch(url)
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 900px;
+    height: 950px;
     margin: 30px;
     width: 450px;
   }
@@ -122,8 +122,8 @@ fetch(url)
   margin: 35px 20px 35px 20px;
   padding: 0;
   line-height: 30px;
-  text-align: center;
-  width: 285px;
+  text-align: left;
+  width: 300px;
   height: max-content;
 
  
