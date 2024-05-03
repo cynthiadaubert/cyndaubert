@@ -37,7 +37,7 @@ function Home() {
  */
   // download resume
   const handleClick = ()=>{
-    const url = 'https://drive.google.com/file/d/16VRU6zGc_wHf-vVBdx6qhpSMt6RQyO5E/view';
+    const url = 'https://drive.google.com/file/d/1wjdyfVTrlMhiwt0f7u40BVrdKDhDs8vi/view';
     window.open(url, '_blank');
   }
 
