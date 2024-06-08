@@ -202,7 +202,7 @@ function Home() {
       
       <Cont>
         <BigTitle>Cynthia Daubert</BigTitle>
-        <Subtitle>Fullstack developer</Subtitle>
+        <Subtitle>Frontend developer</Subtitle>
         <ContactCard></ContactCard>
       </Cont>
     
