@@ -15,29 +15,9 @@ function Home() {
   // translation
   const [tr, i18n] = useTranslation("global")
 
-  
-  
-
-/*   // toggle language
-  const LanguageToggle = ({ i18n }) => {
-    const [isSpanish, setIsSpanish] = useState(false); // State to track current language
-  
-    const toggleLanguage = () => {
-      const newLanguage = isSpanish ? 'en' : 'es'; // Toggle between 'en' and 'es'
-      setIsSpanish(!isSpanish); // Toggle the state
-      i18n.changeLanguage(newLanguage); // Change the language using i18n
-    };
-  
-    return (
-      <button onClick={toggleLanguage}>
-        {isSpanish ? 'English' : 'Español'}
-      </button>
-    );
-  };
- */
   // download resume
   const handleClick = ()=>{
-    const url = 'https://drive.google.com/file/d/1wjdyfVTrlMhiwt0f7u40BVrdKDhDs8vi/view';
+    const url = 'https://drive.google.com/file/d/1nWju_n5CRqs-0vx9pLXUs-Mpcha49aLY/view';
     window.open(url, '_blank');
   }
 
