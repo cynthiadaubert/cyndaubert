@@ -1,32 +1,21 @@
 {
     "header":{
-        "home": "Home",
+        "home": "Contact",
         "projects": "Projects",
-        "skills": "Skills"
+        "stack": "Stack"
     },
     "bio": {
-        "textbio": "Hello! I'm a web developer specialized in frontend, with experience in technologies such as JavaScript, React and Node.js, among other popular frameworks. Currently, I'm continuing my studies in backend development and data management. I hope you enjoy checking my work!",
+        "textbio": "Hello! I am a frontend web developer trained in a community of developers, with an extensive study of JavaScript, React and Node.js. My webapps are based in different libraries, version control systems, architectural patterns, databases, etc. Currently, I'm continuing my studies in backend development. I hope you enjoy exploring my work!",
         "button": "Download resume"
     },
     "contact":{
         "connect": "Let's connect!",
         "thx": "Thanks for your visit!"
     },
-    "bento": {
-        "design": "Design",
-        "list-a": "Planning and scheduling",
-        "list-b": "Time management",
-        "list-c":  "Decision making",
-        "list-d": "Teamwork",
-        "list-e": "Productivity",
-        "list-f": "Flexibility",
-        "list-g": "Adaptability",
-        "list-h": "Collaboration",
-        "list-i": "Proactivity",
-        "list-j": "Diligence",
-        "list-k": "Integrity"
-    },
     "project": {
-        "title": "Projects"
+        "title": "PROJECTS",
+        "petfinder": "A fullstack project based on the Algolia geolocation API to return reports of lost pets near your area. Also it manages user sign-ups and logins, modifies personal data, creates new reports, and sends notifications about lost pets by email.",
+        "rps": "Rock, paper, scissors",
+        "r_desc": "This SPA project is the classic singleplayer game created with Typescript, vanilla CSS, custom components, localStorage and a custom state manager to save the results of the games, or restart them."
     }
 }

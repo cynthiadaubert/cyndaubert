@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {Link} from "react-router-dom"
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import email from "../../public/icons/email-outline.png"
+import clip from "../../public/clip.png"
 import linked from "../../public/icons/linkedin-outline.png"
 import git from "../../public/icons/github-outline.png"
 
@@ -13,17 +13,29 @@ function ContactCard() {
   // translation
   const [tr, i18n] = useTranslation("global")
 
+  const textToCopy = "cynthiaperezdaubert@gmail.com"
+
+  const handleCopy= ()=>{
+    navigator.clipboard.writeText(textToCopy)
+    .then(() => {
+      console.log('Text copied to clipboard');
+      alert("Text copied to clipboard! ❤︎")
+    })
+    .catch((err) => {
+      console.error('Failed to copy text: ', err);
+    });
+  }
+
   //styles
   const Boxcard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: max-content;
   background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 10px 10px 12px rgba(0,0,0,0.1);
   box-shadow: inset 0px 0px 2px 2px rgba(255, 255, 255, 0.4);
   border-radius: 20px; 
-  padding-bottom: 25px;
+  padding: 15px 10px 25px 10px;
   margin: 18px 0px 18px 0px;
 
   
@@ -40,12 +52,13 @@ function ContactCard() {
   text-align: center;
   font-size: 46px;
   height: fit-content;
+  color: #fff1fa;
   margin: 20px 10px 0px 10px;
-  color: #9F81FC;
   padding: 0;
 
   @media (min-width: 769px) {
     font-size: 58px;
+    color: #9F81FC;
     margin: 20px 0px 0px 0px;
   }
 
@@ -72,7 +85,6 @@ function ContactCard() {
   font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 17px;
-  margin-bottom: 50px;
   line-height: 30px;
   text-align: left;
   `;
@@ -95,6 +107,20 @@ function ContactCard() {
   height: fit-content;
   `;
 
+  const Text = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin: 15px 0px 25px 0px;
+
+  &:hover {
+  color: #9F81FC;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+  
+  `;
+
   const Pep = styled.div`
   display: flex;
   height: 50px;
@@ -105,14 +131,10 @@ function ContactCard() {
       <Boxcard>
         <Title>{tr("contact.connect")}</Title>
             <Socials>
-              
-                    <Add>cynthiaperezdaubert@gmail.com</Add>
-                
-           
+                <Text><Add>{textToCopy}</Add><img onClick={handleCopy} src={clip}/></Text>
                 <Pep>
                     <img src={linked}/> <Adress to="https://www.linkedin.com/in/cynperezdaubert/">Linkedin</Adress>
-                </Pep>
-                    
+                </Pep>    
                 <Pep>
                     <img src={git}/> <Adress to="https://github.com/cynthiadaubert">Github</Adress>
                 </Pep>            

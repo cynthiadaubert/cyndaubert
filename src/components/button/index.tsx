@@ -8,10 +8,10 @@ export function Button({onClick = () => {}, children}){
 
   const StyledButton = styled.button`
   background-color: transparent;
-  height: 45px;
-  border: solid 2.5px #ffffff;
+  height: 50px;
+  border: solid 2.5px #fff1fa;;
   border-radius: 30px;
-  width: fit-content;
+  width: 250px;
   font-size: 18px;
   font-weight: bold;
   color: #000000;

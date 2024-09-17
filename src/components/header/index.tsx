@@ -37,16 +37,15 @@ background-color: rgba(255, 255, 255, 0.00);
 
 `;
 
-const StyledLink = styled(Link)`
-color: #585D6B;
+const StyledLink = styled.a`
+color: #4a495c;
 font-family: "Inter", sans-serif;
 font-weight: normal;
-font-size: 15px;
+font-size: 16px;
 text-decoration: none !important;
 
 &:hover {
-  color: #9F81FC;
-  font-weight: bold;
+  color: #f2ebff;
   transition: color 0.3s ease;
 }
 
@@ -56,9 +55,9 @@ return (
     <div>
       <Container>
       <Box>
-        <StyledLink to="/">{tr("header.home")}</StyledLink>
-        <StyledLink to="/projects">{tr("header.projects")}</StyledLink>
-        <StyledLink to="/skills">{tr("header.skills")}</StyledLink>
+        <StyledLink href="#home">{tr("header.home")}</StyledLink>
+        <StyledLink href="#projects">{tr("header.projects")}</StyledLink>
+        <StyledLink href="#stack">{tr("header.stack")}</StyledLink>
       </Box>
       </Container>
     </div>

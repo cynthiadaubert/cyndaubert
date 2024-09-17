@@ -2,41 +2,15 @@ import React,  {useEffect, useState} from "react";
 import img from "../../public/pep.png"
 import styled, {css} from "styled-components"
 import { Button } from "components/button";
+import { Badge } from "components/badge";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 
-export function Card(){
-  
-  const [entries, setEntries] = useState([]);
+export function Cards(){
 
-  const spaceId = 'zo7euwrtovoc';
-  const accessToken = 'bm_FCTa7YGpnFNbn-4rRu8bQ9wtpSpRSEBPPp6NDWh0';
-
-  // CONTENT DELIVERY API
-  useEffect(() => {
-  const contentTypeId = 'portfolioDev';
-  const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?content_type=${contentTypeId}&access_token=${accessToken}`;
-
-
-fetch(url)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    setEntries(data.items);
-  const entries = data.items; // Array de entries
-    entries.forEach(entry => {
-     // console.log(entry.fields.title, entry.fields.text, entry.fields, entry.fields.imageUrl,entry.fields.url, entry.fields.liveView); 
-    });
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
-},[])
+  const [tr, i18n] = useTranslation("global")
 
   // CUSTOM STYLES
 
@@ -44,40 +18,13 @@ fetch(url)
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  animation: fadeIn 2s ease forwards;
   margin: 80px 0px 80px 0px;
-
-  @keyframes fadeIn {
-    0% {
-        opacity: 0; 
-    }
-    100% {
-        opacity: 1; 
-    }
-
-  }  
 
   @media (min-width: 769px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     position: relative;
-    top: -5%;
-    opacity: 0; 
-    animation: fadeSlideIn 1.5s ease forwards; 
-  
-    @keyframes fadeSlideIn {
-      0% {
-          opacity: 0; 
-          transform: translateY(-5%); 
-      }
-      100% {
-          opacity: 1; 
-          transform: translateY(0);
-      }
-  }
-  
   `;
 
   const Boxcard = styled.div`
@@ -85,8 +32,6 @@ fetch(url)
   flex-direction: column;
   align-items: center;
   width: 85%;
-  background-color: rgba(255, 255, 255, 0.10);
-  box-shadow: 10px 10px 12px rgba(0,0,0,0.1);
   border-radius: 20px; 
   overflow: hidden; 
   padding-bottom: 25px;
@@ -94,79 +39,122 @@ fetch(url)
 
   @media (min-width: 769px) {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     height: 950px;
     margin: 30px;
-    width: 450px;
+    width: 100vw;
+  }
+
+  `;
+
+  const Subcontainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0px 0px 2px 2px rgba(255, 255, 255, 0.4);
+  border-radius: 20px;  
+  width: 100%;
+  height: max-content;
+
+    @media (min-width: 769px) {
+    width: max-content;
+    box-shadow: inset 0px 0px 2px 2px rgba(255, 255, 255, 0.8);
   }
 
   `;
 
   const Title = styled.h1`
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 2px;
-  font-weight: lighter;
+  font-weight: bold;
   text-align: center;
   font-size: 36px;
   height: fit-content;
-  margin: 20px 0px 10px 0px;
-  color: #000000;
   padding: 0;
+  margin: 30px 0px 30px 0px;
+  width: 300px;
+  color: #f2ebff;
+  
+  @media (min-width: 769px) {
+  font-size: 42px;
+  color: #9F81FC;
+  margin: 30px 30px 30px 30px;
+  width: 400px;
+  }
   `;
 
-  const Descr = styled.span`
+  const Desc = styled.span`
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-size: 16px;
-  margin: 35px 20px 35px 20px;
-  padding: 0;
   line-height: 30px;
-  text-align: left;
-  width: 300px;
+  text-align: center;
+  width: 275px;
   height: max-content;
+  margin-bottom: 20px;
+  
 
- 
 
   @media (min-width: 769px) {
-    width: 350px;
-    height: max-content;
+  width: 380px;
+  color: #4a495c;
+  font-size: 20px;
   }
 `;
 
 const Image = styled.img`
-height: 350px;
-width: 280px;
-padding-top: 20px;
+width: 100%;
+padding: 20px;
 border-radius: 15px;
-transition: opacity 0.5s ease;
+
 
 @media (min-width: 769px) {
-  height: 340px;
-  width: 300px;
-  padding-top: 20px;
+  width: 700px;
   border-radius: 15px;
 }
 
-&:hover {
-  opacity: 0.4;
-}
+`;
 
+const Stack = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 80px;
+  margin: 40px 0px 40px 0px;
 `;
 
 
 return (
   
   <Container>
-    {entries.map(entry => (
-      <Boxcard key={entry.sys.id}>
-        <Image src={entry.fields.imageUrl}/>
-        <Title>{entry.fields.title}</Title>
-        <Descr>{entry.fields.text}</Descr>
-        <Link to={entry.fields.url}><Button>Repo</Button></Link>
-        <Link to={entry.fields.liveView}><Button>Live view</Button></Link>
+      <Boxcard>
+        <Image src={"./src/public/465shots_soa.png"}/>
+        <Subcontainer>
+          <Title>Petfinder Webapp</Title>
+          <Desc>{tr("project.petfinder")}</Desc>
+          <Link to={"https://github.com/cynthiadaubert/desafio-m8"}><Button>Repo</Button></Link>
+          <Link to={"https://desafio-m8-e7ec6.web.app/"}><Button>Live view</Button></Link>
+          <Stack>
+             <Badge>React.js</Badge><Badge>Typescript</Badge><Badge>React Router DOM</Badge>
+             <Badge>Node.js</Badge><Badge>Firebase</Badge><Badge>Webpack</Badge><Badge>Sequelize</Badge><Badge>Postman</Badge>
+          </Stack>
+        </Subcontainer>
       </Boxcard>
-    ))}
+      <Boxcard>
+        <Image src={"./src/public/144shots_so.png"}/>
+        <Subcontainer>
+          <Title>{tr("project.rps")}</Title>
+          <Desc>{tr("project.r_desc")}</Desc>
+          <Link to={"https://github.com/cynthiadaubert/desafio-m5"}><Button>Repo</Button></Link>
+          <Link to={"https://cynthiadaubert.github.io/desafio-m5"}><Button>Live view</Button></Link>
+          <Stack>
+             <Badge>Typescript</Badge><Badge>HTML</Badge><Badge>CSS</Badge><Badge>custom state</Badge><Badge>custom components</Badge>
+          </Stack>
+        </Subcontainer>
+      </Boxcard>
   </Container>
 );
 

@@ -1,32 +1,21 @@
 {
     "header":{
-        "home": "Home",
+        "home": "Contacto",
         "projects": "Proyectos",
-        "skills": "Skills"
+        "stack": "Stack"
     },
     "bio": {
-        "textbio":"Hola! Soy una desarrolladora web especializada en frontend, con experiencia en tecnologías como JavaScript, React y Node.js, entre otros frameworks populares. Actualmente, estoy continuando mis estudios sobre desarrollo backend y la gestión de datos. ¡Espero que disfrutes explorando mi trabajo!",
+        "textbio":"¡Hola! Soy desarrolladora web frontend formada en una comunidad de desarrolladores y con un amplio estudio de JavaScript, React y Node.js. Mis webapps se componen de diferentes librerías, control de versiones, patrones de arquitectura y diseño, bases de datos, etc. Actualmente, estoy continuando mis estudios sobre desarrollo backend. ¡Espero que disfrutes explorando mi trabajo!",
         "button": "Descargar CV"
     },
     "contact":{
         "connect": "Conectémonos!",
         "thx": "Gracias por tu visita!"
     },
-    "bento": {
-        "design": "Diseño",
-        "list-a": "Planificación",
-        "list-b": "Manejo del tiempo",
-        "list-c": "Toma de decisiones",
-        "list-d": "Trabajo en equipo",
-        "list-e": "Productividad",
-        "list-f": "Flexibilidad",
-        "list-g": "Adaptabilidad",
-        "list-h": "Colaboración",
-        "list-i": "Proactividad",
-        "list-j": "Diligencia",
-        "list-k": "Integridad"
-    },
     "project": {
-        "title": "Proyectos"
+        "title": "PROYECTOS",
+        "petfinder": "Este proyecto fullstack se basa en la api de geolocalización de Algolia para devolver reportes de mascotas perdidas cerca de tu zona, además de registrar y loguear usuarios, modificar datos personales, crear reportes nuevos y enviar reportes sobre las mascotas perdidas por email.",
+        "rps": "Piedra, papel y tijera",
+        "r_desc": "Este proyecto SPA es el clásico juego singleplayer creado con Typescript, vanilla CSS, custom components, localStorage y un custom state manager para guardar los resultados de las partidas, o reiniciarlas."
     }
 }

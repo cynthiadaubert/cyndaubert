@@ -17,17 +17,16 @@ background-color: rgba(255, 255, 255, 0.00);
 
 
 @media (min-width: 769px) {
-margin: 0;
+margin: 180px 0px 0px 0px;
 padding: 0;
 }
 
 `;
 
 const Copy = styled.a`
-color: #120813;
-font-family: "Playfair Display", serif;
+color: #fdf6f6;
+font-family: "Inter", sans-serif;
 letter-spacing: 1px;
-font-weight: bolder;
 font-size: 15px;
 `;
 

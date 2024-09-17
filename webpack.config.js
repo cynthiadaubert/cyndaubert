@@ -48,6 +48,7 @@ module.exports = {
 
     alias: {
       '@hooks': path.resolve(__dirname, 'src/hooks'), // Add this alias
+      '@translations': path.resolve(__dirname, 'src/translations/')
     },
     
   },

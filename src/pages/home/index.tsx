@@ -1,11 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components"
-import { Header } from "../../components/header"; 
-import { Footer } from "components/footer";
 import { Button } from "components/button";
 import { ContactCard } from "components/contact";
 import photo from "../../public/circle.png"
+import starOne from "../../public/star01.png"
+import starTwo from "../../public/star02.png"
 import laptop from "../../public/notebook.png"
 import LanguageToggle from "components/language/index"
 
@@ -37,13 +37,11 @@ function Home() {
 
   const Subtitle = styled.p`
   display: none;
-
-  
+  color: #9F81FC;
   @media (min-width: 769px) {  
   display: inherit;
   font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-size: 22px;
+  font-size: 24px;
   margin: 0px 0px 50px 0px;
   padding: 0 auto;
   }
@@ -60,40 +58,15 @@ function Home() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeIn 2s ease forwards;
 
-  @keyframes fadeIn {
-    0% {
-        opacity: 0; 
-    }
-    100% {
-        opacity: 1; 
-    }
-
-  } 
-
-  @media (min-width: 769px) {  
-    display: flex;
+  @media (min-width: 769px) {
     flex-direction: row;
     justify-content: space-between;
     width: 1550px;
     margin-bottom: 50px;
-
-    left: -5%;
-    animation: fadeSlideIn 1.5s ease forwards;
-  
-    @keyframes fadeSlideIn {
-      0% {
-          opacity: 0; 
-          transform: translateX(-5%); 
-      }
-      100% {
-          opacity: 1; 
-          transform: translateX(0);
-      }
   }
 
-  `;
+`;
 
   const Title = styled.h1`
   font-family: "Playfair Display", serif;
@@ -125,7 +98,7 @@ function Home() {
     font-size: 4.5em;
     height: max-content;
     margin: 0 auto;
-    color: #585D6B;
+    color: #4a495c;
     padding: 0;
   }
 
@@ -158,6 +131,57 @@ function Home() {
   }
 
   `;
+  const StarOne = styled.img`
+  display: none;
+
+  @keyframes fadeOut {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7; 
+         transform: translateY(40px); 
+    }
+  }
+
+
+
+  @media (min-width: 769px) {
+    display: inherit;
+    height: 100px;
+    position: absolute;
+    margin-left: -450px;
+    margin-top: -120px;
+    opacity: 0;
+    animation: fadeOut 5s infinite;
+  }
+
+  `;
+  const StarTwo = styled.img`
+  display: none;
+
+    @keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.7;
+        transform: translateY(0); 
+    }
+    50% {
+        opacity: 0.3; 
+        transform: translateY(-25px); 
+    }
+  }
+
+
+  @media (min-width: 769px) {
+    display: inherit;
+    height: 100px;
+    position: absolute;
+    margin-right: -550px;
+    margin-top: 220px;
+    animation: fadeInOut 5s infinite;
+  }
+
+  `;
 
 
   const Laptop = styled.img`
@@ -167,6 +191,7 @@ function Home() {
     display: inherit;
     width: 420px;
     margin-top: -150px; 
+    filter: drop-shadow(-2mm -1mm 3mm rgba(57, 45, 181,0.3));
   }
 
   `;
@@ -179,7 +204,7 @@ function Home() {
   padding: 0;
   line-height: 30px;
   text-align: center;
-  color: #585D6B;
+  color: #4a495c;
   `;
 
   const LinksCard = styled.div`
@@ -195,8 +220,8 @@ function Home() {
 
   
   return (  
-  <div>
-    <Header></Header>
+  <div className="anim">
+    <section id="home">
     <Box>
     <Container> 
       
@@ -210,7 +235,9 @@ function Home() {
         <Image src={photo}/>
         <Title>Cynthia Daubert</Title>
         
+        <StarOne src={starOne}></StarOne>
         <Laptop src={laptop}></Laptop>
+        <StarTwo src={starTwo}></StarTwo>
         <TextBio>{tr("bio.textbio")}</TextBio>
         <Button onClick={handleClick}>{tr("bio.button")}</Button>
         <LanguageToggle></LanguageToggle>
@@ -218,7 +245,7 @@ function Home() {
       <LinksCard><ContactCard></ContactCard></LinksCard>
     </Container>
     </Box>
-    <Footer></Footer>
+    </section>
   </div>
 )
 }
