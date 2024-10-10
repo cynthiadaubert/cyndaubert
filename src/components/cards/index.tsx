@@ -135,7 +135,7 @@ return (
           <Title>Petfinder Webapp</Title>
           <Desc>{tr("project.petfinder")}</Desc>
           <a href="https://github.com/cynthiadaubert/desafio-m8" target="_blank" rel="noopener noreferrer"><Button>Repo</Button></a>
-          <a href="https://desafio-m8-e7ec6.web.app/login" target="_blank" rel="noopener noreferrer"><Button>Live view</Button></a>
+          <a href="https://desafio-m8-e7ec6.firebaseapp.com/login" target="_blank" rel="noopener noreferrer"><Button>Live view</Button></a>
           <Stack>
              <Badge>React.js</Badge><Badge>Typescript</Badge><Badge>React Router DOM</Badge>
              <Badge>Node.js</Badge><Badge>Firebase</Badge><Badge>Webpack</Badge><Badge>Sequelize</Badge><Badge>Postman</Badge>
