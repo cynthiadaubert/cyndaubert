@@ -64,7 +64,7 @@ function ContactCard() {
 
   `;
 
-  const Adress = styled(Link)`
+  const Adress = styled.p`
   font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 18px;
@@ -133,10 +133,10 @@ function ContactCard() {
             <Socials>
                 <Text><Add>{textToCopy}</Add><img onClick={handleCopy} src={clip}/></Text>
                 <Pep>
-                    <img src={linked}/> <Adress to="https://www.linkedin.com/in/cynperezdaubert/">Linkedin</Adress>
+                    <img src={linked}/> <a href="https://www.linkedin.com/in/cynperezdaubert/" target="_blank" rel="noopener noreferrer"><Adress>Linkedin</Adress></a>
                 </Pep>    
                 <Pep>
-                    <img src={git}/> <Adress to="https://github.com/cynthiadaubert">Github</Adress>
+                    <img src={git}/> <a href="https://github.com/cynthiadaubert" target="_blank" rel="noopener noreferrer"><Adress>Github</Adress></a>
                 </Pep>            
             </Socials>
             <Thx>❤︎ {tr("contact.thx")}</Thx>

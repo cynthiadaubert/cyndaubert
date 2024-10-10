@@ -3,7 +3,6 @@ import img from "../../public/pep.png"
 import styled, {css} from "styled-components"
 import { Button } from "components/button";
 import { Badge } from "components/badge";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 
@@ -135,8 +134,8 @@ return (
         <Subcontainer>
           <Title>Petfinder Webapp</Title>
           <Desc>{tr("project.petfinder")}</Desc>
-          <Link to={"https://github.com/cynthiadaubert/desafio-m8"}><Button>Repo</Button></Link>
-          <Link to={"https://desafio-m8-e7ec6.web.app/"}><Button>Live view</Button></Link>
+          <a href="https://github.com/cynthiadaubert/desafio-m8" target="_blank" rel="noopener noreferrer"><Button>Repo</Button></a>
+          <a href="https://desafio-m8-e7ec6.web.app/login" target="_blank" rel="noopener noreferrer"><Button>Live view</Button></a>
           <Stack>
              <Badge>React.js</Badge><Badge>Typescript</Badge><Badge>React Router DOM</Badge>
              <Badge>Node.js</Badge><Badge>Firebase</Badge><Badge>Webpack</Badge><Badge>Sequelize</Badge><Badge>Postman</Badge>
@@ -148,8 +147,8 @@ return (
         <Subcontainer>
           <Title>{tr("project.rps")}</Title>
           <Desc>{tr("project.r_desc")}</Desc>
-          <Link to={"https://github.com/cynthiadaubert/desafio-m5"}><Button>Repo</Button></Link>
-          <Link to={"https://cynthiadaubert.github.io/desafio-m5"}><Button>Live view</Button></Link>
+          <a href="https://github.com/cynthiadaubert/desafio-m5" target="_blank" rel="noopener noreferrer"><Button>Repo</Button></a>
+          <a href="https://cynthiadaubert.github.io/desafio-m5" target="_blank" rel="noopener noreferrer"><Button>Live view</Button></a>
           <Stack>
              <Badge>Typescript</Badge><Badge>HTML</Badge><Badge>CSS</Badge><Badge>custom state</Badge><Badge>custom components</Badge>
           </Stack>
